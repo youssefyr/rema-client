@@ -11,9 +11,13 @@
   },
   "dependencies": {
     "@tauri-apps/api": ">=2.0.0-rc.0",
+    "@tauri-apps/plugin-log": "github:tauri-apps/tauri-plugin-log#v2",
     "@tauri-apps/plugin-shell": ">=2.0.0-rc.0",
+    "@tauri-apps/plugin-store": "github:tauri-apps/tauri-plugin-store#v2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.2",
+    "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store#v1"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",

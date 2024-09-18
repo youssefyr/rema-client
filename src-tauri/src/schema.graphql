@@ -1,0 +1,65 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+scalar DateTime
+
+
+type Query {
+  shopitem(id: String): Shopitem
+  task(id: String): Task
+  user(id: String): User
+}
+
+type User {
+  coins: Int
+  createdAt: DateTime
+  email: String
+  id: String
+  name: String
+  password: String
+  rememberMe: [String]
+  sessionID: String
+  shopItems: [Shopitem]
+  tasks: [Task]
+  updatedAt: DateTime
+  xp: Int
+}
+
+type Shopitem {
+  createdAt: DateTime
+  id: String
+  price: Float
+  quantity: Int
+  updatedAt: DateTime
+  user: BaseUser
+}
+
+type BaseUser {
+  coins: Int
+  email: String
+  id: String
+  name: String
+  xp: Int
+}
+
+type Mutation {
+  createUser(email: String!, password: String!, name: String!, rememberMe: [String]): CreateUserPayload
+}
+
+type Task {
+  completed: Boolean
+  createdAt: DateTime
+  description: String
+  id: String
+  repeatable: Boolean
+  repeatduration: Int
+  title: String
+  updatedAt: DateTime
+  user: BaseUser
+}
+
+type CreateUserPayload {
+  user: User
+}

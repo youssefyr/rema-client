@@ -1,0 +1,1 @@
+Check if the redirect to Auth is organic or not and change css based on that (from landing page or direct /login)

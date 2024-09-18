@@ -1,0 +1,42 @@
+query GetUserById($id: String!) {
+    user(id: $id) {
+        __typename
+        id
+        email
+        name
+        password
+        sessionID
+        rememberMe
+        createdAt
+        updatedAt
+        coins
+        xp
+        tasks {
+            id
+        }
+        shopItems {
+            id
+        }
+    }
+}
+
+mutation CreateUser($email: String!, $password: String!, $name: String!, $rememberMe: [String]) {
+  createUser(email: $email, password: $password, name: $name, rememberMe: $rememberMe) {
+    user {
+      id
+      email
+      name
+      coins
+      xp
+      createdAt
+      updatedAt
+      tasks {
+            id
+        }
+      shopItems {
+            id
+        }
+
+   }
+ }
+}
